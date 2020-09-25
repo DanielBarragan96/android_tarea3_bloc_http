@@ -1,16 +1,25 @@
-# form_get_users_bloc
+# Tarea 3 | Investigación y completar ejemplo de request HTTP con BLoC
 
-A new Flutter project.
+En base al ejercicio de request HTTP hecho en clases que se encuentra en el [repo de git](https://github.com/01FC/form_bloc_example)
+Completar agregando la funcionalidad de filtrar únicamente usuarios con id pares o impares.
 
-## Getting Started
+- Agregar un botón al Appbar de la Home Page donde nos despliegue un menú con dos opciones pares e impares al elegir alguna de ellas, aplique el filtro desde el bloc y muestre en pantalla los elementos en la lista. (55 pts)
 
-This project is a starting point for a Flutter application.
+- Actualmente se muestra el nombre del user, mostrar además del nombre del usuario, company name, street y phone asi como dividers entre cada elemento de la lista (tip: cambiar ListView.builder por ListView.separated ) (10 pts)
 
-A few resources to get you started if this is your first Flutter project:
+- Video de app funcionando (5 pts)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Link a repo de Git (5 pts)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Reporte en formato de tarea (25 pts)
+
+En el reporte responder a la pregunta:
+Que es el manejo de estados y para que nos sirve?
+
+1. Provider
+2. BLoC
+3. MobX (opcional)
+4. Redux (opcional)
+5. Inherited widget (opcional recomendado)
+
+[Lectura previa recomendada](https://flutter.dev/docs/development/ui/interactive)
