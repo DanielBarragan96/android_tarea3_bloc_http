@@ -17,6 +17,36 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Users list"),
       ),
+      drawer: Drawer(
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 50),
+              MaterialButton(
+                minWidth: 200,
+                onPressed: () {},
+                child: Text(
+                  "Filtrar pares",
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.blue,
+              ),
+              MaterialButton(
+                minWidth: 200,
+                onPressed: () {
+                  //HomeBloc.add(FilterUsersEvent(filterEven: true));
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  "Filtrar nones",
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.blue,
+              ),
+            ],
+          ),
+        ),
+      ),
       body: BlocProvider(
         create: (context) => HomeBloc()..add(GetAllUsersEvent()),
         child: BlocConsumer<HomeBloc, HomeState>(
