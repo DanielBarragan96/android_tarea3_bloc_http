@@ -29,6 +29,29 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         yield ErrorState(error: "No hay elementos por mostrar");
     } else if (event is FilterUsersEvent) {
       // TODO hacer despues
+      //En caso de que la lista de usuarios este vacia buscarlos
+      if (_userList.length > 0) {
+        yield LoadingState();
+        await _getAllUsers();
+      }
+      //Verificar que se hayan cargado los usuarios
+      if (_userList.length > 0) {
+        List<User> oddList = List();
+        if (event.filterEven) {
+          //Filtrar even
+          for (int index = 1; index < _userList.length; index += 2) {
+            oddList.add(_userList.elementAt(index));
+          }
+          yield ShowUsersState(usersList: oddList);
+        } else {
+          //Filtrar odd
+          for (int index = 0; index < _userList.length; index += 2) {
+            oddList.add(_userList.elementAt(index));
+          }
+          yield ShowUsersState(usersList: oddList);
+        }
+      } else
+        yield ErrorState(error: "No hay elementos por mostrar");
     }
   }
 
