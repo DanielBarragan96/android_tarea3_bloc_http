@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.of(context).pop();
                 },
                 child: Text(
-                  "Filtrar pares",
+                  "Filtrar nones",
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.blue,
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.of(context).pop();
                 },
                 child: Text(
-                  "Filtrar nones",
+                  "Filtrar pares",
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.blue,
