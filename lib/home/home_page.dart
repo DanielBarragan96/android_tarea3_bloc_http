@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  HomeBloc _homeBloc = HomeBloc();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,11 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 50),
               MaterialButton(
                 minWidth: 200,
-                onPressed: () {},
+                onPressed: () {
+                  //Agregar evento FilterUsersEvent con contexto del BlocProvider
+                  _homeBloc..add(FilterUsersEvent(filterEven: false));
+                  Navigator.of(context).pop();
+                },
                 child: Text(
                   "Filtrar pares",
                   style: TextStyle(color: Colors.white),
@@ -34,12 +39,25 @@ class _HomePageState extends State<HomePage> {
               MaterialButton(
                 minWidth: 200,
                 onPressed: () {
-                  //TODO hacer HomeBloc.add con contexto del BlocProvider
-                  //HomeBloc.add(FilterUsersEvent(filterEven: true));
+                  //Agregar evento FilterUsersEvent con contexto del BlocProvider
+                  _homeBloc..add(FilterUsersEvent(filterEven: true));
                   Navigator.of(context).pop();
                 },
                 child: Text(
                   "Filtrar nones",
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.blue,
+              ),
+              MaterialButton(
+                minWidth: 200,
+                onPressed: () {
+                  //Agregar evento GetAllUsersEvent con contexto del BlocProvider
+                  _homeBloc..add(GetAllUsersEvent());
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  "Mostrar todos los usuario",
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.blue,
@@ -49,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: BlocProvider(
-        create: (context) => HomeBloc()..add(GetAllUsersEvent()),
+        create: (context) => _homeBloc..add(GetAllUsersEvent()),
         child: BlocConsumer<HomeBloc, HomeState>(
           listener: (context, state) {
             // para mostrar dialogos o snackbars
