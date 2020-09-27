@@ -2,6 +2,8 @@
 
 El reporte completo de esta tarea se encuentra en [este documento de Google](https://docs.google.com/document/d/1YkeQbL4D4wmG_reln4woQr3aq4pqrN9WFqjsRwqWGZs/edit#)
 
+El video demostrando el funcionamiento del app se encuentra en [este link](https://youtu.be/yoITuB-AUEA)
+
 # Descripción
 
 En base al ejercicio de request HTTP hecho en clases que se encuentra en el [repo de git](https://github.com/01FC/form_bloc_example)
