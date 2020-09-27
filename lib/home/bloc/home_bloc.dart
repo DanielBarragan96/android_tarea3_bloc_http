@@ -28,7 +28,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       else
         yield ErrorState(error: "No hay elementos por mostrar");
     } else if (event is FilterUsersEvent) {
-      // TODO hacer despues
       //En caso de que la lista de usuarios este vacia buscarlos
       if (_userList == null) {
         yield LoadingState();
