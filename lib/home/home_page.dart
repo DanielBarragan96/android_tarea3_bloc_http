@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
               MaterialButton(
                 minWidth: 200,
                 onPressed: () {
+                  //TODO hacer HomeBloc.add con contexto del BlocProvider
                   //HomeBloc.add(FilterUsersEvent(filterEven: true));
                   Navigator.of(context).pop();
                 },
@@ -63,11 +64,24 @@ class _HomePageState extends State<HomePage> {
           builder: (context, state) {
             if (state is ShowUsersState) {
               return RefreshIndicator(
-                child: ListView.builder(
+                child: ListView.separated(
+                  separatorBuilder: (context, index) => Divider(
+                    color: Colors.black,
+                  ),
                   itemCount: state.usersList.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
                       title: Text(state.usersList[index].name),
+                      subtitle: Text(state.usersList[index].username +
+                          ", " +
+                          state.usersList[index].company.name +
+                          ".\n" +
+                          state.usersList[index].address.street +
+                          ", " +
+                          state.usersList[index].address.city +
+                          ".\n" +
+                          state.usersList[index].phone +
+                          ", "),
                     );
                   },
                 ),
