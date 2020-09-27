@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
               return RefreshIndicator(
                 child: ListView.separated(
                   separatorBuilder: (context, index) => Divider(
-                    color: Colors.black,
+                    color: Colors.grey,
                   ),
                   itemCount: state.usersList.length,
                   itemBuilder: (BuildContext context, int index) {
